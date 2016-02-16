@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   resources :users
   resources :posts
-  root 'static#home'
+  root 'users#index'
 end
