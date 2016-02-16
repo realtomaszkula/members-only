@@ -8,7 +8,7 @@
 end
 
 5.times do |x|
-  title = Faker::Hacker.adjective
+  title = Faker::Hacker.adjective.capitalize!
   body = Faker::Hacker.say_something_smart
   Post.create!( title: title,
                 body: body,
