@@ -49,7 +49,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg',
+  gem 'pg'
   gem 'puma',           '2.11.1'
 end
 
