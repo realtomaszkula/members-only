@@ -1,26 +1,26 @@
 class PostsController < ApplicationController
-  def new
-  end
 
   def index
+    @post = Post.new
     @posts = Post.order(created_at: :desc)
   end
 
   def create
-    params[:post][:user_id] = current_user.id
+    @posts = Post.order(created_at: :desc)
     @post = Post.new(post_params)
     if @post.save
       flash[:info] = "Posted!"
       redirect_to root_url
     else
-      #
+      flash[:danger] = "Error!"
+      render 'index'
     end
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :user_id)
+    params.require(:post).permit(:title, :body, :author, :user_id)
   end
 
 end
