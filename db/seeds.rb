@@ -12,5 +12,5 @@ end
   body = Faker::Hacker.say_something_smart
   Post.create!( title: title,
                 body: body,
-                user_id: x )
+                user_id: x+1 )
 end
