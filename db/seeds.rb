@@ -8,7 +8,8 @@
   5.times do |x|
     title = Faker::Hacker.adjective.capitalize!
     body = Faker::Hacker.say_something_smart
-    @user.posts.build(title: title, body: body).save
+    author = @user.name
+    @user.posts.build(author: author, title: title, body: body).save
   end
 
 end
