@@ -1,9 +1,16 @@
 <div class="header clearfix">
   <nav>
     <ul class="nav nav-pills pull-right">
-      <li role="presentation" class="active"><a href="#">Home</a></li>
-      <li role="presentation"><a href="#">Login</a></li>
+      <li role="presentation" class="active">
+        <%= link_to 'Home', root_path %>
+      </li>
+      <li role="presentation">
+        <%= link_to 'Login', login_path %>
+      </li>
     </ul>
-    <h3 class="text-muted"> Members-Only</h3>
+    <%= content_tag :h3, class: "text-muted" do %>
+      <%= link_to 'Members-Only' , root_path %>
+    <% end %>
+
   </nav>
 </div>
