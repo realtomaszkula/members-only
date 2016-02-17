@@ -3,6 +3,6 @@
      <blockquote>
         <%= content_tag :h4, post.title %>
         <%= content_tag :p, post.body %>
-        <%= content_tag :footer, user.name %>
+        <% if logged_in? %> <%= content_tag :footer, user.name %> <% end %>
       </blockquote>
 <% end %>

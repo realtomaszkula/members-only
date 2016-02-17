@@ -4,9 +4,20 @@
       <li role="presentation" class="active">
         <%= link_to 'Home', root_path %>
       </li>
+      <% unless logged_in? %>
       <li role="presentation">
         <%= link_to 'Login', login_path %>
       </li>
+      <% end %>
+      <% if logged_in? %>
+        <li role="presentation">
+          <%= link_to 'Profile', current_user %>
+        </li>
+        <li role="presentation">
+          <%= link_to 'Logout', logout_path %>
+        </li>
+        <% end %>
+
     </ul>
     <%= content_tag :h3, class: "text-muted" do %>
       <%= link_to 'Members-Only' , root_path %>

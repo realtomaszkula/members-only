@@ -1,11 +1,12 @@
 <%= provide(:title, 'Members-Only') %>
 
-
-<div class="jumbotron">
-        <h1>Find out who's talking about who!</h1>
-        <p class="lead">Members-Only is a trash talk community.</p>
-        <%= link_to 'Sign up', signup_path, class: "btn btn-lg btn-success", role: 'button'  %>
-</div>
+<% unless logged_in? %>
+  <div class="jumbotron">
+          <h1>Find out who's talking about who!</h1>
+          <p class="lead">Members-Only is a trash talk community.</p>
+          <%= link_to 'Sign up', signup_path, class: "btn btn-lg btn-success", role: 'button'  %>
+  </div>
+<% end %>
 
 
  <div class="row marketing">
