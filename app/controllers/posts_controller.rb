@@ -2,11 +2,11 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
-    @posts = Post.order(created_at: :desc)
+    @posts = Post.paginate(:page => params[:page], :per_page => 8).order(created_at: :desc)
   end
 
   def create
-    @posts = Post.order(created_at: :desc)
+    @posts = Post.paginate(:page => params[:page], :per_page => 8).order(created_at: :desc)
     @post = Post.new(post_params)
     if @post.save
       flash[:info] = "Posted!"
@@ -23,3 +23,4 @@ class PostsController < ApplicationController
   end
 
 end
+Post.paginate(:page => 1, :per_page => 2)
