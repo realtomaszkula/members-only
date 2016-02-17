@@ -11,6 +11,14 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.new
+    if @user.save
+      flash[:sucess] = "User created!"
+      redirect_to @user
+    else
+      flash.now[:danger] = "Incorrect!"
+      render :new
+    end
   end
 
   def edit
