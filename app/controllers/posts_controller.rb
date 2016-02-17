@@ -2,6 +2,10 @@ class PostsController < ApplicationController
   def new
   end
 
+  def index
+    @posts = Post.order(created_at: :desc)
+  end
+
   def create
     params[:post][:user_id] = current_user.id
     @post = Post.new(post_params)

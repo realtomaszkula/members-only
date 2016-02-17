@@ -1,7 +1,5 @@
-<% user.posts.each do |post| %>
      <blockquote>
         <%= content_tag :h4, post.title %>
         <%= content_tag :p, post.body %>
         <% if logged_in? %> <%= content_tag :footer, "#{user.name} | #{post.created_at.strftime("%d %b. %Y %H:%M")}" %> <% end %>
       </blockquote>
-<% end %>
