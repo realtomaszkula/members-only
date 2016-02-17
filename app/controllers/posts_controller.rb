@@ -12,7 +12,6 @@ class PostsController < ApplicationController
       flash[:info] = "Posted!"
       redirect_to root_url
     else
-      flash[:danger] = "Error!"
       render 'index'
     end
   end

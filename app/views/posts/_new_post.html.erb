@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
   <%= form_for(@post) do |f| %>
-    <%= render 'shared/error_messages' %>
+    <%= render partial: 'shared/error_messages',  :locals => { :obj => @post } %>
     <%= f.hidden_field :author, value: current_user.name %>
     <%= f.hidden_field :user_id, value: current_user.id %>
 
